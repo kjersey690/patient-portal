@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  .container.py-3
+    .row
+      .col-md-12
+        .row
+          .col-md-6.mx-auto
+            .card
+              h5.text-center.text-white.list-group-item.list-group-item-action.list-group-item.bg-primary.p-3 #{title}
+              form(method='POST', action='/patients/add')
+                #form-group.m-3
+                  label Patient Name:
+                  input.form-control(name="name", type='text')
+                #form-group.m-3
+                  label Address:
+                  input.form-control(name="address", type='text')
+                #form-group.m-3
+                  label Insurance:
+                  input.form-control(name="insurance", type='text')
+                #form-group.m-3
+                  label Physician:
+                  input.form-control(name="physician", type='text')
+                #form-group.m-3
+                  label Sex:
+                  input.form-control(name="sex", type='text')
+                  input.btn.btn-block.btn-primary.mt-3(type="submit", value="Submit")

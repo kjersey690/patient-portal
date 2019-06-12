@@ -1,0 +1,71 @@
+body {
+  color: blue;
+  overflow-x: hidden;
+}
+
+
+
+ul li {
+  list-style: none;
+  text-align: center;
+}
+
+#form-group {
+  display: hidden;
+}
+.btn {
+  padding: 1rem;
+}
+.center {
+  text-align: center;
+}
+.flexbox-container {
+  height: 100%;
+}
+
+.main-color{
+   color: gray;
+}
+.border{
+  border: solid 1px;
+}
+
+tr {
+  cursor: pointer;
+}
+.img-responsive {
+  height: 400px;
+  width: 400px;
+}
+
+input {
+   background-color: white !important;
+}
+
+
+/*@media only screen and (max-width: 600px){
+  .dashboard {
+
+    display: none;
+    width: 100%;
+  }
+  .patient-setup{
+
+
+  }
+  .patient-table {
+    width:100%;
+  }
+}*/
+
+@media only screen and (max-width: 892px){
+
+  .dashboard {
+    display: none;
+    background-color: blue;
+  }
+
+
+}
+
+

@@ -1,0 +1,68 @@
+extends layout
+
+block content
+
+
+  .row.m-2.d-flex.justify-content-between.p-2
+    .col-sm-3.dashboard
+      .list-group
+        .list-group-item.active Dashboard
+        .list-group-item
+          | Users
+          span.badge.badge-pill.badge-primary.m-1 56
+        .list-group-item
+          | Posts
+          span.badge.badge-pill.badge-primary.m-1 12,345
+        .list-group-item
+          | Pages
+          span.badge.badge-pill.badge-primary.m-1 12
+    .col-sm-9.patient-setup
+      .card.d-flex.p-3.bg-primary.text-center
+      .card.header.d-flex.p-2.flex-row
+        .col-sm-4
+          .card.bg-light
+            .card-body.fas.fa-chart-bar.fa-2x.text-center  Users
+              h5.card-title  56
+              h6.card-text
+        .col-sm-4
+          .card.bg-light
+            .card-body.fas.fa-pencil-alt.fa-2x.text-center  Posts
+              h5.card-title 12,345
+              h6.card-text
+        .col-sm-4
+          .card.bg-light
+            .card-body.far.fa-file-alt.fa-2x.text-center  Pages
+              h5.card-title 12
+              h6.card-text
+
+
+    .col-sm-12.patient-table
+      .table-responsive
+        table.table.table-striped.patient-table
+          thead
+
+            tr
+              th #
+              th Name
+              th Address
+              th Insurance
+              th Physician
+              th
+              tbody
+                each patient, i in patients
+                  patient <br />
+                    tr
+                      td=i+1
+                      td=patient.name
+                      td=patient.address
+                      td=patient.insurance
+                      td=patient.physician
+                      td.a.btn.btn-secondary.patient-btn.btn-color(href="/patients/"+patient._id,data-id=patient._id) Select
+
+
+
+
+
+
+
+

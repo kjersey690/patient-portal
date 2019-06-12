@@ -1,0 +1,32 @@
+extends layout
+
+block content
+
+
+      .text-center
+        img.m-3(src='http://www.prestontravel.ca/images/blank-user-medium.png')
+      h2.text-center.m-3 #{patient.name}
+
+
+
+      .col-sm-9
+      .table-responsive
+        table.table
+
+          thead
+            tr
+              th Name
+              th Insurance
+              th Physician
+              th
+              th
+              th
+              tbody
+                tr
+                  td #{patient.name}
+                  td #{patient.insurance}
+                  td #{patient.physician}
+                  td.a.btn.btn-success.edit-btn.btn-color(href="/patients/edit"+patient._id, data-id=patient._id) Edit Patient
+                  td.a.btn.btn-danger.delete-patient(href="#",data-id=patient._id) Delete Patient
+
+

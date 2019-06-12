@@ -1,0 +1,24 @@
+extends layout
+
+block content
+   .container.py-5
+    .row
+      .col-md-12
+        h2.text-center.text-white.mb-4
+        .row
+          .col-md-6.mx-auto
+            .card
+              .card.bg-white
+                .text-center.i.far.fa-user.fa-5x.bg-primary.ml-auto.mr-auto.mt-3.rounded-circle.p-4
+                h3.mb-0.text-center.pt-3 Log Into Your Account
+                  form(method='POST', action='/users/login')
+                    .card-body
+                      #form-group.m-3
+                        input.form-control(name="username", type='text',
+                        placeholder="Username")
+                      #form-group.m-3
+                        input.form-control(name="password", type='password', placeholder="Password")
+                        input.btn.btn-block.btn-primary.mt-3(type="submit", value="Submit")
+                      h6.ml-3
+                        | Not yet a member?
+                        a.m-1(href="/users/register") Sign Up
