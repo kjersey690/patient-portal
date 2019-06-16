@@ -6,7 +6,7 @@ const router = express.Router();
 // Bring in patient model
 let Patient = require('../models/patient');
 
-router.get('/add', (req, res)=>{
+router.get('/add',ensureAuthenticated, (req, res)=>{
   res.render('add_patients', {
     title: 'Add Patient'
   });
@@ -102,5 +102,15 @@ router.get('/:id', function(req, res){
       });
   });
 });
+
+// Access Control
+function ensureAuthenticated(req, res, next){
+  if(req.isAuthenicated()){
+    return next();
+  }else{
+    req.flash('danger', 'Please login');
+    res.redirect('/users/login')
+  }
+}
 
 module.exports = router;
