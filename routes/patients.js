@@ -6,7 +6,7 @@ const router = express.Router();
 // Bring in patient model
 let Patient = require('../models/patient');
 
-router.get('/add',ensureAuthenticated, (req, res)=>{
+router.get('/add', ensureAuthenticated, (req, res)=>{
   res.render('add_patients', {
     title: 'Add Patient'
   });
@@ -54,7 +54,7 @@ router.post('/add', function(req, res){
 
 
 // Load Edit Form
-router.get('/edit/:id', function(req,res){
+router.get('/edit/:id', ensureAuthenticated, function(req,res){
   Patient.findById(req.params.id, function(err, patient){
       res.render('edit_patient', {
         patient: patient
@@ -105,7 +105,7 @@ router.get('/:id', function(req, res){
 
 // Access Control
 function ensureAuthenticated(req, res, next){
-  if(req.isAuthenicated()){
+  if(req.isAuthenticated()){
     return next();
   }else{
     req.flash('danger', 'Please login');
